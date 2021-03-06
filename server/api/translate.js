@@ -7,7 +7,7 @@ const isUser = require('./isUser')
 module.exports = router
 
 const {Translate} = require('@google-cloud/translate').v2
-const projectId = 'translate-chat-297404'
+const projectId = 'healthy-anthem-306803'
 const translate = new Translate({
   projectId: projectId,
   credentials: {
@@ -18,7 +18,7 @@ const translate = new Translate({
 
 async function translater(text, target) {
   const {Translate} = require('@google-cloud/translate').v2
-  const projectId = 'translate-chat-297404'
+  const projectId = 'healthy-anthem-306803'
   const translate = new Translate({
     projectId: projectId,
     credentials: {
@@ -58,7 +58,7 @@ router.post('/all', isUser, async (req, res, next) => {
 })
 async function translaterAll(arrayOfObj, lan) {
   const {Translate} = require('@google-cloud/translate').v2
-  const projectId = 'translate-chat-297404'
+  const projectId = 'healthy-anthem-306803'
   const translate = new Translate({
     projectId: projectId,
     credentials: {
