@@ -1,12 +1,13 @@
 const Sequelize = require('sequelize')
 const pkg = require('../../package.json')
-var pg = require('pg')
-pg.defaults.ssl = true
+// var pg = require('pg')
+// pg.defaults.ssl = true
 
 const databaseName = pkg.name + (process.env.NODE_ENV === 'test' ? '-test' : '')
-console.log(databaseName)
+
 const db = new Sequelize(
-  process.env.DATABASE_URL || `postgres://localhost:5432/${databaseName}`,
+  process.env.DATABASE_URL + '?ssl=true' ||
+    `postgres://localhost:5432/${databaseName}`,
   {
     logging: false
   }
