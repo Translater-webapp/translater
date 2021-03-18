@@ -3,6 +3,7 @@ const pkg = require('../../package.json')
 const databaseName = pkg.name + (process.env.NODE_ENV === 'test' ? '-test' : '')
 
 let config
+
 if (process.env.DATABASE_URL) {
   config = {
     logging: false,
